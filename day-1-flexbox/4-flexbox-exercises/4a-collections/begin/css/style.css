@@ -1,6 +1,7 @@
 /* colors - see style guide for docs. 
 Clearly there is more you could place in variables, up to you if you want to use them. My answer does not go beyond colors to keep the code easier to read. */
 
+/*global styles*/
 :root {
     --color1: #001219;
     --color2: #005f73;
@@ -117,9 +118,26 @@ a {
 /* continue border color */
 /* At this breakpoint, transition to 2 figures per line */
 
-@media (min-width: 550px) {}
+@media (min-width: 550px) {
+    .photos {
+        display: flex;
+        flex-flow: row wrap;
+        justify-content: space-between;
+    }
+
+    .photos li {
+        /* no need of gap property above because remaining 1% space we'll get in between
+        due to justify-content above */
+        flex-basis: 49.5%;
+    }
+}
 
 
 /* At this breakpoint, transition to 3 figures per line */
 
-@media (min-width: 800px) {}
+@media (min-width: 800px) {
+
+    .photos li {
+        flex-basis: 32.5%;
+    }
+}
