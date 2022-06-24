@@ -55,6 +55,14 @@ section ul {
     margin: 0;
 }
 
+.missionimg {
+    width: 100%;
+}
+
+.missiontext figure {
+    border: none;
+}
+
 
 /* To keep mobile screens from being stupid long, consider setting a max height on the images and hide the overflow. 
 
@@ -140,7 +148,6 @@ figcaption a {
     color: var(--color8);
 }
 
-
 /* turn on flexbox here - prior to this, elements stacked individually as blocks */
 
 @media (min-width: 550px) {
@@ -156,6 +163,7 @@ figcaption a {
     figure img {
         object-position: 0;
     }
+
 }
 
 @media (min-width: 800px) {
