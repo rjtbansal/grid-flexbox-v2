@@ -50,6 +50,70 @@ section ul {
     margin: 0;
 }
 
+/* header and nav styles*/
+.header {
+    background-color: var(--color5);
+}
+
+header {
+    padding: 1rem;
+    max-width: 1200px;
+    margin: 0 auto; /*will be centered*/
+}
+
+/* navigation styling - universal across breakpoints */
+nav ul {
+    /* common pattern to remove bullets as well as associated ul padding */
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-around;
+    align-items: space-between;
+}
+
+nav li {
+    /* 2 buttons per row */
+    flex-basis: 48%; 
+    margin-bottom: 0.5rem;
+}
+
+nav li:first-child {
+    flex-basis: 100%;
+    text-align: center;
+}
+
+nav a{
+    text-decoration: none;
+    font-size: 1.2rem;
+    color: white;
+    background-color: var(--color10);
+    /* always display links as block inside navigation. Pushes edges all the way to end
+    Good for touch screens */
+    display: block;
+    padding: 0.5rem;
+    border-radius: 5px;
+    text-align: center;
+}
+
+nav li:first-child a {
+    /* Note even though we are giving a background color below on hover for
+    a tags this particular selector has more specificity so it overrides
+    which works for our logo scenario where we dont want any hover effects */
+    background-color: transparent;
+}
+
+nav a:hover {
+    background-color: var(--color1);
+    color: var(--color5);
+}
+
+/* nav li:first-child {
+    // logo on the left and margin on the right
+    margin-right: auto;
+} */
 
 /* To keep mobile screens from being stupid long, consider setting a max height on the images and hide the overflow. 
 
@@ -235,6 +299,29 @@ footer address {
     footer address {
         margin-top: 0;
     }
+
+    /* nav related  */
+    nav ul {
+        justify-content: center;
+        /* em is being used so that the gap scales based on text size */
+        gap: 1.2em; 
+    }
+
+    nav li{
+        flex-basis: auto;
+        margin-bottom: 0;
+    }
+
+    nav a {
+        color: var(--color1);
+        background-color: transparent;
+    }
+
+    nav a:hover {
+        color: var(--color2);
+        background-color: transparent;
+    }
+
 }
 
 @media (min-width: 800px) {
@@ -247,5 +334,28 @@ footer address {
     }
     address {
         flex-basis: 65.5%;
+    }
+    /* nav logo in center */
+    nav ul {
+        justify-content: flex-end;
+    }
+
+    nav li:first-child {
+        /* for logo we are turning off flex basis in desktop mode because
+        we'll be using it in other mode */
+        flex-basis: auto;
+        margin: 0 auto;
+        /* logo in the middle */
+        order: 2;
+    }
+    nav li:nth-child(2),
+    nav li:nth-child(3) {
+        /* show 2 li's on the left */
+        order: 1;
+    }
+    nav li:nth-child(4),
+    nav li:nth-child(5) {
+        /* remaining li's on the right */
+        order: 3;
     }
 }
