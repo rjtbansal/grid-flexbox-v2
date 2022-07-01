@@ -324,6 +324,7 @@ footer address {
     address {
         flex-basis: 49.5%;
     }
+    /* stretch the last image within #popular section to width of 100% */
     #popular li:last-child {
         flex-basis: 100%;
     }
@@ -373,6 +374,7 @@ footer address {
     }
 }
 
+/* desktop */
 @media (min-width: 800px) {
     section h2 {
         margin-left: 100px;
