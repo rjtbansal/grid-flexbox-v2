@@ -66,6 +66,7 @@ figure {
 figure img {
     grid-column: 1/2;
     grid-row: 1/3;
+    height: 100%;
 }
 
 figcaption {
@@ -89,8 +90,29 @@ figcaption a:hover {
     color: var(--color8);
 }
 
-@media (min-width: 550px) {}
 
-@media (min-width: 800px) {
+@media (min-width: 600px) {
+    section ul {
+        display: grid;
+        grid-template-columns: repeat(3, auto);
+        gap: 5px;
+    }
+
+    .colSpan2 {
+        grid-column: span 2;
+    }
+
+    .colSpan3 {
+        grid-column: span 3;
+    }
+
+    .rowSpan2 {
+        grid-row: span 2;
+    }
+
+    figure {
+        /* without this images dont line up properly */
+        height: 100%;
+    }
 
 }
