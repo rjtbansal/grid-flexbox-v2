@@ -340,6 +340,7 @@ footer address {
 }
 
 .d3 {
+    /* ensure it displays on 1st row  */
     grid-row: 1/2;
 }
 
@@ -474,19 +475,24 @@ footer address {
         order: 3;
     }
     #donut ul {
+        /*  2 columns with min size of 100px and flexible for 1fr */
         grid-template-columns: repeat(2, minmax(100px, 1fr));
     }
     .d1 {
         grid-column: 1/2;
+        /* spans 3 rows  */
         grid-row: 1/4;
     }
     .d2 {
         grid-column: 1/2;
+        /* spans between row 4 and 5 */
         grid-row: 4/6;
     }
     .d3 {
+        /* behaving as grid item */
         grid-column: 2/3;
         grid-row: 1/2;
+        /* now behaving as a grid container for image and text to be overlapped */
         display: grid;
         grid-template-columns: 1fr;
         grid-template-rows: 1fr;
@@ -509,6 +515,7 @@ footer address {
     }
     .author {
         padding: 1rem;
+        /* without z-index links on the text would not be clickable  */
         z-index: 1000;
     }
 }
